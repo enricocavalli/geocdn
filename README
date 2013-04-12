@@ -1,6 +1,6 @@
 To use include geocdn.conf in your nginx.con
 
-The you can conditionally redirect with something like this
+Now you can conditionally redirect http requests (in server or location stanzas):
 
 set $redirect_to_cdn "$frontend$request_uri";
 
