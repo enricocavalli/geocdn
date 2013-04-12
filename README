@@ -1,0 +1,10 @@
+To use include geocdn.conf in your nginx.con
+
+The you can conditionally redirect with something like this
+
+set $redirect_to_cdn "$frontend$request_uri";
+
+if ( $redirect_to_cdn ~ "^C/project/vlc" ) {
+  rewrite ^ http://$cdn_site.mirror.garr.it/sf$request_uri ;
+  break;
+}
